@@ -5,8 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "test": "jest --verbose",
+    "build:ui": "rm -rf build && cd ../fullstackopen_fronted && npm run build && cp -r build ../fullstackopen_backend/"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.11"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
